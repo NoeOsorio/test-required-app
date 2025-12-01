@@ -64,17 +64,17 @@ pip install -r requirements.txt
 python app.py
 ```
 
-The API will be available at `http://localhost:5000`
+The API will be available at `http://localhost:5002`
 
 ### Production Mode (using Gunicorn)
 ```bash
-gunicorn -w 4 -b 0.0.0.0:5000 app:app
+gunicorn -w 4 -b 0.0.0.0:5002 app:app
 ```
 
 ## Environment Variables
 
 - `HOST`: Server host (default: `0.0.0.0`)
-- `PORT`: Server port (default: `5000`)
+- `PORT`: Server port (default: `5002`)
 - `DEBUG`: Enable debug mode (default: `False`)
 
 ## Production Deployment
@@ -82,7 +82,7 @@ gunicorn -w 4 -b 0.0.0.0:5000 app:app
 For production deployment, use Gunicorn as the WSGI server:
 
 ```bash
-gunicorn -w 4 -b 0.0.0.0:${PORT:-5000} app:app
+gunicorn -w 4 -b 0.0.0.0:${PORT:-5002} app:app
 ```
 
 The number of workers (`-w 4`) can be adjusted based on your server's CPU cores (typically 2-4x CPU cores).
@@ -93,13 +93,13 @@ Test the endpoints using curl:
 
 ```bash
 # Health check
-curl http://localhost:5000/health
+curl http://localhost:5002/health
 
 # GET request
-curl http://localhost:5000/api/requests
+curl http://localhost:5002/api/requests
 
 # POST request
-curl -X POST http://localhost:5000/api/requests \
+curl -X POST http://localhost:5002/api/requests \
   -H "Content-Type: application/json" \
   -d '{"test": "data"}'
 ```

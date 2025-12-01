@@ -18,7 +18,7 @@ app = Flask(__name__)
 # Configuration
 app.config['JSONIFY_PRETTYPRINT_REGULAR'] = True
 app.config['HOST'] = os.getenv('HOST', '0.0.0.0')
-app.config['PORT'] = int(os.getenv('PORT', 5001))
+app.config['PORT'] = int(os.getenv('PORT', 5002))
 app.config['DEBUG'] = os.getenv('DEBUG', 'False').lower() == 'true'
 
 
