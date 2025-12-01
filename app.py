@@ -28,7 +28,8 @@ def health():
     return jsonify({
         'status': 'healthy',
         'timestamp': datetime.utcnow().isoformat(),
-        'previewEnv': os.getenv('PREVIEW_ENV', 'False')
+        'previewEnv': os.getenv('PREVIEW_ENV', 'False'),
+        'previewEnvValue': os.getenv('PREVIEW_ENV_VALUE', 'Not set')
     }), 200
 
 
