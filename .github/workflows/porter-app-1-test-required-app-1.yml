@@ -21,6 +21,8 @@ jobs:
           cluster: "1"
           project: "1"
           token: ${{ secrets.PORTER_APP_1_1107971867 }}
+          host: https://noe-dev.withporter.run
+          namespace: default
       # - name: Setup porter
       #   uses: porter-dev/setup-porter@v0.1.0
       # - name: Override porter CLI
