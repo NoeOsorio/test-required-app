@@ -5,9 +5,11 @@ A simple Flask API for infrastructure testing with health check and request hand
 ## Endpoints
 
 ### `GET /health`
+
 Health check endpoint that returns the API status.
 
 **Response:**
+
 ```json
 {
   "status": "healthy",
@@ -16,9 +18,11 @@ Health check endpoint that returns the API status.
 ```
 
 ### `GET /api/requests`
+
 Handle GET requests and return request information.
 
 **Response:**
+
 ```json
 {
   "method": "GET",
@@ -29,11 +33,13 @@ Handle GET requests and return request information.
 ```
 
 ### `POST /api/requests`
+
 Handle POST requests and return request data.
 
 **Request Body:** JSON or form data
 
 **Response:**
+
 ```json
 {
   "method": "POST",
@@ -47,12 +53,14 @@ Handle POST requests and return request data.
 ## Installation
 
 1. Create a virtual environment:
+
 ```bash
 python3 -m venv venv
 source venv/bin/activate  # On Windows: venv\Scripts\activate
 ```
 
 2. Install dependencies:
+
 ```bash
 pip install -r requirements.txt
 ```
@@ -60,6 +68,7 @@ pip install -r requirements.txt
 ## Running Locally
 
 ### Development Mode
+
 ```bash
 python app.py
 ```
@@ -67,6 +76,7 @@ python app.py
 The API will be available at `http://localhost:5002`
 
 ### Production Mode (using Gunicorn)
+
 ```bash
 gunicorn -w 4 -b 0.0.0.0:5002 app:app
 ```
@@ -103,4 +113,3 @@ curl -X POST http://localhost:5002/api/requests \
   -H "Content-Type: application/json" \
   -d '{"test": "data"}'
 ```
-
